@@ -5,12 +5,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "cars")
@@ -29,7 +32,7 @@ public class Car {
     public final static String FIELD_MODEL = "model";
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = FIELD_ID)
     private long id;
 
@@ -50,5 +53,8 @@ public class Car {
 
     @Column(name = FIELD_MODEL)
     private String model;
+
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
+    private List<Refuel> refuels;
 
 }

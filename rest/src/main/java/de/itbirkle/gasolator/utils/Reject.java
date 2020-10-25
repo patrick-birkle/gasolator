@@ -16,4 +16,16 @@ public class Reject {
             throw new IllegalArgumentException(attributeName + " should not be blank");
         }
     }
+
+    public static void ifLessOrEqualZero(long value, String attributeName) {
+        if (value <= 0) {
+            throw new IllegalArgumentException(attributeName + " should be greater than 0");
+        }
+    }
+
+    public static void ifLessOrEqualZero(double value, String attributeName) {
+        if (value <= 0.0) {
+            throw new IllegalArgumentException(attributeName + " should be greater than 0");
+        }
+    }
 }
