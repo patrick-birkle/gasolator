@@ -1,5 +1,6 @@
 package de.itbirkle.gasolator.domain;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,6 +21,7 @@ import java.time.ZonedDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode
 @Accessors(chain = true)
 public class Refuel {
 

@@ -1,10 +1,11 @@
 package de.itbirkle.gasolator.domain;
 
 import de.itbirkle.gasolator.utils.domain.CarBuilder;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CarTest {
 
@@ -26,12 +27,15 @@ class CarTest {
                 .model(MODEL)
                 .build();
 
+        assertEquals(0, car.getId());
         assertEquals(NAME, car.getName());
         assertEquals(DESCRIPTION, car.getDescription());
         assertEquals(KILOMETERS, car.getKilometers());
         assertEquals(COLOR, car.getColor());
         assertEquals(BRAND, car.getBrand());
         assertEquals(MODEL, car.getModel());
+        assertNotNull(car.getRefuels());
+        assertEquals(0, car.getRefuels().size());
     }
 
     @Test
@@ -45,4 +49,5 @@ class CarTest {
 
         assertThrows(IllegalArgumentException.class, carBuilder::build);
     }
+
 }

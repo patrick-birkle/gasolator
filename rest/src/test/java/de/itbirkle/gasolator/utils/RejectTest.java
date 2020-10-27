@@ -17,4 +17,16 @@ class RejectTest {
         assertThrows(IllegalArgumentException.class, () -> Reject.ifBlank("", "test"));
         assertThrows(IllegalArgumentException.class, () -> Reject.ifBlank("   ", "test"));
     }
+
+    @Test
+    void ifLessOrEqualZero() {
+        assertThrows(IllegalArgumentException.class, () -> Reject.ifLessOrEqualZero(0, "test"));
+        assertThrows(IllegalArgumentException.class, () -> Reject.ifLessOrEqualZero(-1, "test"));
+    }
+
+    @Test
+    void testIfLessOrEqualZero() {
+        assertThrows(IllegalArgumentException.class, () -> Reject.ifLessOrEqualZero(0.0, "test"));
+        assertThrows(IllegalArgumentException.class, () -> Reject.ifLessOrEqualZero(-1.0, "test"));
+    }
 }

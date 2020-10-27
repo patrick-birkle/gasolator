@@ -13,6 +13,7 @@ import java.util.List;
 @Accessors(chain = true)
 public class CarDTO {
 
+    private long id;
     private String name;
     private String description;
     private long kilometers;

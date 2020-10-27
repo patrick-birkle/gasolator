@@ -1,9 +1,10 @@
 package de.itbirkle.gasolator.domain;
 
-import de.itbirkle.gasolator.application.CarDTO;
-import de.itbirkle.gasolator.utils.domain.CarMapper;
+import de.itbirkle.gasolator.exception.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class CarService {
@@ -15,14 +16,20 @@ public class CarService {
         this.carRepository = carRepository;
     }
 
-    public void saveCar(final CarDTO carDTO) {
-        Car car = CarMapper.toEntity(carDTO);
+    public void saveCar(final Car car) {
         carRepository.save(car);
     }
 
-    public CarDTO getCar(final long id) {
-        Car car = carRepository.getOne(id);
-        return CarMapper.toDTO(car);
+    public Car findCarById(final long id) {
+        Optional<Car> optCar = carRepository.findById(id);
+        if (optCar.isEmpty()) {
+            throw new DataNotFoundException("Car could not be found");
+        }
+        return optCar.get();
+    }
+
+    public void updateCar(final Car car) {
+        saveCar(car);
     }
 
 }

@@ -1,6 +1,5 @@
 package de.itbirkle.gasolator.domain;
 
-import de.itbirkle.gasolator.utils.domain.CarBuilder;
 import de.itbirkle.gasolator.utils.domain.RefuelBuilder;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class RefuelTest {
 
-    private static final Car CAR = CarTestFactory.createCar();
+    private static final Car CAR = CarTestFactory.create();
     private static final long CAR_KILOMETERS = 1337;
     private static final String GAS_STATION = "Shell";
     private static final String GAS_TYPE = "Octane";
@@ -34,6 +33,7 @@ class RefuelTest {
                 .timestamp(TIMESTAMP)
                 .build();
 
+        assertEquals(0, refuel.getId());
         assertNotNull(refuel.getCar());
         assertEquals(CAR_KILOMETERS, refuel.getCarKilometers());
         assertEquals(GAS_STATION, refuel.getGasStation());

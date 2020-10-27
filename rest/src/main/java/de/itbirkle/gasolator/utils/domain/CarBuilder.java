@@ -1,10 +1,9 @@
 package de.itbirkle.gasolator.utils.domain;
 
 import de.itbirkle.gasolator.domain.Car;
-import de.itbirkle.gasolator.domain.Refuel;
 import de.itbirkle.gasolator.utils.Reject;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public final class CarBuilder {
     private String name;
@@ -13,7 +12,6 @@ public final class CarBuilder {
     private String color;
     private String brand;
     private String model;
-    private List<Refuel> refuels;
 
     private CarBuilder() {
     }
@@ -52,11 +50,6 @@ public final class CarBuilder {
         return this;
     }
 
-    public CarBuilder refuels(List<Refuel> refuels) {
-        this.refuels = refuels;
-        return this;
-    }
-
     public Car build() {
         Reject.ifBlank(name, "name");
 
@@ -67,7 +60,7 @@ public final class CarBuilder {
         car.setColor(color);
         car.setBrand(brand);
         car.setModel(model);
-        car.setRefuels(refuels);
+        car.setRefuels(new ArrayList<>());
         return car;
     }
 }
