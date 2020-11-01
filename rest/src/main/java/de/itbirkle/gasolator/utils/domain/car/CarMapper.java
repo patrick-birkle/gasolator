@@ -1,7 +1,8 @@
-package de.itbirkle.gasolator.utils.domain;
+package de.itbirkle.gasolator.utils.domain.car;
 
-import de.itbirkle.gasolator.application.CarDTO;
+import de.itbirkle.gasolator.application.dto.CarDTO;
 import de.itbirkle.gasolator.domain.Car;
+import de.itbirkle.gasolator.utils.domain.refuel.RefuelMapper;
 
 public class CarMapper {
 

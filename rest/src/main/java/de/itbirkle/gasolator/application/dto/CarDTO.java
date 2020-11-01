@@ -1,4 +1,4 @@
-package de.itbirkle.gasolator.application;
+package de.itbirkle.gasolator.application.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

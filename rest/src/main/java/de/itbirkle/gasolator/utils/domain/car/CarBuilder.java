@@ -1,4 +1,4 @@
-package de.itbirkle.gasolator.utils.domain;
+package de.itbirkle.gasolator.utils.domain.car;
 
 import de.itbirkle.gasolator.domain.Car;
 import de.itbirkle.gasolator.utils.Reject;
@@ -51,7 +51,7 @@ public final class CarBuilder {
     }
 
     public Car build() {
-        Reject.ifBlank(name, "name");
+        Reject.ifBlank(name, "name is mandatory");
 
         Car car = new Car();
         car.setName(name);

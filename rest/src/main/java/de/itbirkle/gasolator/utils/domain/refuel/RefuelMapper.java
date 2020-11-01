@@ -1,6 +1,6 @@
-package de.itbirkle.gasolator.utils.domain;
+package de.itbirkle.gasolator.utils.domain.refuel;
 
-import de.itbirkle.gasolator.application.RefuelDTO;
+import de.itbirkle.gasolator.application.dto.RefuelDTO;
 import de.itbirkle.gasolator.domain.Refuel;
 
 import java.util.Collections;

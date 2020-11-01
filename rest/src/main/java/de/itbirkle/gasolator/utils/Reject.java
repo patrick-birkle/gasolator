@@ -4,28 +4,27 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Reject {
 
-    public static <T> void  ifNull(T t, String objectName) {
+    public static <T> void  ifNull(T t, String message) {
         if (t == null) {
-            throw new IllegalArgumentException(objectName + " should not be null");
+            throw new IllegalArgumentException(message);
         }
     }
 
-    public static void ifBlank(String string, String attributeName) {
-        ifNull(string, attributeName);
+    public static void ifBlank(String string, String message) {
         if (StringUtils.isBlank(string)) {
-            throw new IllegalArgumentException(attributeName + " should not be blank");
+            throw new IllegalArgumentException(message);
         }
     }
 
-    public static void ifLessOrEqualZero(long value, String attributeName) {
+    public static void ifLessOrEqualZero(long value, String message) {
         if (value <= 0) {
-            throw new IllegalArgumentException(attributeName + " should be greater than 0");
+            throw new IllegalArgumentException(message);
         }
     }
 
-    public static void ifLessOrEqualZero(double value, String attributeName) {
+    public static void ifLessOrEqualZero(double value, String message) {
         if (value <= 0.0) {
-            throw new IllegalArgumentException(attributeName + " should be greater than 0");
+            throw new IllegalArgumentException(message);
         }
     }
 }

@@ -1,6 +1,6 @@
 package de.itbirkle.gasolator.domain;
 
-import de.itbirkle.gasolator.utils.domain.RefuelBuilder;
+import de.itbirkle.gasolator.utils.domain.refuel.RefuelBuilder;
 
 import java.time.ZonedDateTime;
 

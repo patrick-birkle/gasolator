@@ -1,6 +1,6 @@
 package de.itbirkle.gasolator.domain;
 
-import de.itbirkle.gasolator.utils.domain.CarBuilder;
+import de.itbirkle.gasolator.utils.domain.car.CarBuilder;
 
 public class CarTestFactory {
 

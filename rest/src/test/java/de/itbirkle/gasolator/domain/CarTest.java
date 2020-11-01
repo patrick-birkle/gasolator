@@ -1,6 +1,6 @@
 package de.itbirkle.gasolator.domain;
 
-import de.itbirkle.gasolator.utils.domain.CarBuilder;
+import de.itbirkle.gasolator.utils.domain.car.CarBuilder;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

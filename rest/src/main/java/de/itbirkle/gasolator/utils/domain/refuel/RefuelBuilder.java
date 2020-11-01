@@ -1,4 +1,4 @@
-package de.itbirkle.gasolator.utils.domain;
+package de.itbirkle.gasolator.utils.domain.refuel;
 
 import de.itbirkle.gasolator.domain.Car;
 import de.itbirkle.gasolator.domain.Refuel;
@@ -58,10 +58,10 @@ public final class RefuelBuilder {
     }
 
     public Refuel build() {
-        Reject.ifNull(car, "car");
-        Reject.ifLessOrEqualZero(carKilometers, "car kilometers");
-        Reject.ifLessOrEqualZero(liters, "liters");
-        Reject.ifLessOrEqualZero(price, "price");
+        Reject.ifNull(car, "car is mandatory");
+        Reject.ifLessOrEqualZero(carKilometers, "car kilometers should be greater than zero");
+        Reject.ifLessOrEqualZero(liters, "liters should be greater than zero");
+        Reject.ifLessOrEqualZero(price, "price should be greater than zero");
 
         Refuel refuel = new Refuel();
         refuel.setCar(car);

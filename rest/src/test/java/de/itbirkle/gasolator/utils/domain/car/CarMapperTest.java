@@ -1,15 +1,15 @@
-package de.itbirkle.gasolator.utils.domain;
+package de.itbirkle.gasolator.utils.domain.car;
 
-import de.itbirkle.gasolator.application.CarDTO;
+import de.itbirkle.gasolator.application.dto.CarDTO;
 import de.itbirkle.gasolator.domain.Car;
 import de.itbirkle.gasolator.domain.CarTestFactory;
 import de.itbirkle.gasolator.domain.RefuelTestFactory;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.Collections;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class CarMapperTest {
 
