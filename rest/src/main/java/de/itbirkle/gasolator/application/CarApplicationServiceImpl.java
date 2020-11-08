@@ -33,7 +33,7 @@ public class CarApplicationServiceImpl implements CarApplicationService {
 
     @Override
     public void updateCar(CarDTO carDTO) {
-        Reject.ifLessOrEqualZero(carDTO.getId(), "car dto id is mandatory");
+        Reject.ifLessOrEqualZero(carDTO.getId(), "car id is mandatory");
         Car car = carService.findCarById(carDTO.getId());
         CarUpdater.update(car, carDTO);
         carService.updateCar(car);

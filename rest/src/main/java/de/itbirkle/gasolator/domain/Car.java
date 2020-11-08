@@ -1,9 +1,6 @@
 package de.itbirkle.gasolator.domain;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 import lombok.experimental.Accessors;
 
 import javax.persistence.CascadeType;
@@ -19,10 +16,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "cars")
-@NoArgsConstructor
-@Getter
-@Setter
-@EqualsAndHashCode
+@Data
 @Accessors(chain = true)
 public class Car {
 

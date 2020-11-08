@@ -1,17 +1,16 @@
 package de.itbirkle.gasolator.utils;
 
-import org.apache.commons.lang3.StringUtils;
-
 public class Reject {
 
-    public static <T> void  ifNull(T t, String message) {
+    public static <T> void ifNull(T t, String message) {
         if (t == null) {
             throw new IllegalArgumentException(message);
         }
     }
 
     public static void ifBlank(String string, String message) {
-        if (StringUtils.isBlank(string)) {
+        ifNull(string, message);
+        if (string.isBlank()) {
             throw new IllegalArgumentException(message);
         }
     }

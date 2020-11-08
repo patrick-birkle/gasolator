@@ -42,9 +42,9 @@ class CarServiceTest {
         car.setId(1);
 
         when(carRepository.findById(eq(car.getId()))).thenReturn(Optional.of(car));
-        Car carCreated = underTest.findCarById(car.getId());
+        Car result = underTest.findCarById(car.getId());
 
-        assertEquals(car, carCreated);
+        assertEquals(car, result);
     }
 
     @Test

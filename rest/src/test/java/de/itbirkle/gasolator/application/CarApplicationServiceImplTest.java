@@ -38,7 +38,7 @@ class CarApplicationServiceImplTest {
     void saveCar() {
         CarDTO carDTO = new CarDTO().setName(CarTestFactory.NAME);
         underTest.saveCar(carDTO);
-        verify(carService).saveCar(any());
+        verify(carService).saveCar(any(Car.class));
     }
 
     @Test

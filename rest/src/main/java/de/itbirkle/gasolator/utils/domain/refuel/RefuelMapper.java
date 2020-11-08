@@ -1,6 +1,7 @@
 package de.itbirkle.gasolator.utils.domain.refuel;
 
 import de.itbirkle.gasolator.application.dto.RefuelDTO;
+import de.itbirkle.gasolator.domain.Car;
 import de.itbirkle.gasolator.domain.Refuel;
 
 import java.util.Collections;
@@ -29,4 +30,15 @@ public class RefuelMapper {
                 .collect(Collectors.toList());
     }
 
+    public static Refuel toEntity(Car car, RefuelDTO refuelDTO) {
+        return RefuelBuilder.aRefuel()
+                .car(car)
+                .carKilometers(refuelDTO.getCarKilometers())
+                .gasStation(refuelDTO.getGasStation())
+                .gasType(refuelDTO.getGasType())
+                .liters(refuelDTO.getLiters())
+                .price(refuelDTO.getPrice())
+                .timestamp(refuelDTO.getTimestamp())
+                .build();
+    }
 }

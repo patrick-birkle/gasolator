@@ -1,15 +1,11 @@
 package de.itbirkle.gasolator.application.dto;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 import lombok.experimental.Accessors;
 
 import java.util.List;
 
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
 @Accessors(chain = true)
 public class CarDTO {
 

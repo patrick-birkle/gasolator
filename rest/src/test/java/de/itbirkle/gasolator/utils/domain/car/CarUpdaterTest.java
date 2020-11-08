@@ -15,7 +15,6 @@ class CarUpdaterTest {
     private final String brand = "TEST_BRAND";
     private final String model = "TEST_MODEL";
 
-
     @Test
     void update() {
         Car car = CarTestFactory.create();

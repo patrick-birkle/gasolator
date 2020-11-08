@@ -1,5 +1,6 @@
 package de.itbirkle.gasolator.domain;
 
+import de.itbirkle.gasolator.exception.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,11 @@ public class RefuelService {
         this.refuelRepository = refuelRepository;
     }
 
+    public Refuel findRefuelById(long id) {
+        return refuelRepository.findById(id)
+                .orElseThrow(() -> new DataNotFoundException("Refuel could not be found"));
+    }
+
     public void saveRefuel(Refuel refuel) {
         refuelRepository.save(refuel);
     }
@@ -20,5 +26,4 @@ public class RefuelService {
     public void updateRefuel(Refuel refuel) {
         saveRefuel(refuel);
     }
-
 }

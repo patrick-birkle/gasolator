@@ -3,12 +3,11 @@ package de.itbirkle.gasolator.utils.domain.car;
 import de.itbirkle.gasolator.application.dto.CarDTO;
 import de.itbirkle.gasolator.domain.Car;
 import de.itbirkle.gasolator.utils.Reject;
-import org.apache.commons.lang3.StringUtils;
+import de.itbirkle.gasolator.utils.StringUtils;
 
 public class CarUpdater {
 
     public static void update(Car car, CarDTO carDTO) {
-
         Reject.ifNull(car, "car is mandatory");
         Reject.ifNull(carDTO, "car dto is mandatory");
 
@@ -31,7 +30,6 @@ public class CarUpdater {
         if (StringUtils.isNotBlank(carDTO.getModel())) {
             car.setModel(carDTO.getModel());
         }
-
     }
 
 }
